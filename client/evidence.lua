@@ -292,7 +292,7 @@ CreateThread(function()
     while true do
         Wait(10)
         if LocalPlayer.state.isLoggedIn then
-            if PlayerJob.name == 'police' and onDuty then
+            if PlayerJob.name == 'lawman' and onDuty then
                 if Citizen.InvokeNative(0x8425C5F057012DAB, PlayerPedId()) == -164645981 then
                     if next(Casings) then
                         local pos = GetEntityCoords(PlayerPedId(), true)

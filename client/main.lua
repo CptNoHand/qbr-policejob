@@ -65,7 +65,7 @@ AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
         DutyBlips = {}
     end
 
-    if PlayerJob and PlayerJob.name == 'police' then
+    if PlayerJob and PlayerJob.name == 'lawman' then
         CreatePrompts()
     end
 end)
@@ -126,7 +126,7 @@ end)
 
 RegisterNetEvent('police:client:UpdateBlips', function(players)
     if Config.ShowBlips then
-        if PlayerJob and (PlayerJob.name == 'police' or PlayerJob.name == 'ambulance') and onDuty then
+        if PlayerJob and (PlayerJob.name == 'lawman' or PlayerJob.name == 'doctor') and onDuty then
             if DutyBlips then
                 for k, v in pairs(DutyBlips) do
                     RemoveBlip(v)

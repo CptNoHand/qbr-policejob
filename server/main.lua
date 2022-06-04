@@ -352,7 +352,7 @@ RegisterNetEvent('police:server:policeAlert', function(text)
     local coords = GetEntityCoords(ped)
     local players = exports['qbr-core']:GetQBPlayers()
     for k,v in pairs(players) do
-        if v.PlayerData.job.name == 'police' and v.PlayerData.job.onduty then
+        if v.PlayerData.job.name == 'lawman' and v.PlayerData.job.onduty then
             local alertData = {title = Lang:t('info.new_call'), coords = {coords.x, coords.y, coords.z}, description = text}
             TriggerClientEvent("qb-phone:client:addPoliceAlert", v.PlayerData.source, alertData)
             TriggerClientEvent('police:client:policeAlert', v.PlayerData.source, coords, text)

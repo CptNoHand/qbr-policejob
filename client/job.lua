@@ -84,7 +84,7 @@ end
 local function IsArmoryWhitelist() -- being removed
     local retval = false
 
-    if exports['qbr-core']:GetPlayerData().job.name == 'police' then
+    if exports['qbr-core']:GetPlayerData().job.name == 'lawman' then
         retval = true
     end
     return retval
@@ -199,7 +199,7 @@ end)
 
 -- Toggle Duty
 CreateThread(function()
-    if LocalPlayer.state.isLoggedIn and PlayerJob.name == 'police' then
+    if LocalPlayer.state.isLoggedIn and PlayerJob.name == 'lawman' then
         CreatePrompts()
     end
 
